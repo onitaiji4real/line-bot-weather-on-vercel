@@ -1,0 +1,15 @@
+{
+  "name": "line-bot-weather-on-vercel",
+  "version": "1.0.0",
+  "description": "This is express & node.js webhook server for line bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@line/bot-sdk": "^9.3.0",
+    "express": "^4.19.2"
+  }
+}
