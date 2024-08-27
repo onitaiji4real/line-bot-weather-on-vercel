@@ -16,7 +16,7 @@ const app = express();
 
 app.post("/callback", line.middleware(config), (req, res) => {
   Promise.all(req.body.events.map(handleEvent))
-    .then((result) => result.json(result))
+    .then((result) => res.json(result))
     .catch((err) => {
       console.error(err);
       res.status.end();
@@ -25,7 +25,7 @@ app.post("/callback", line.middleware(config), (req, res) => {
 
 function handleEvent(event) {
   if (event.type !== "message" || event.message.type !== "text")
-    return Promise.resole(null);
+    return Promise.resolve(null);
 
   const echo = { type: "text", text: event.message.text };
 
